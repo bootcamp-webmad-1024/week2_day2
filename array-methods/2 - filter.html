@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // .filter() receives a callback as an argument
+        // the argumented callback has a default parameter: each array position
+
+        // .filter() does not mutate the original array
+        // .filter() returns a new array with the same length or less than the original one
+
+        // the new array will have only those elements whose callback returned truthy
+
+
+
+
+        // Example 1
+        const numbers = [2, 3, 4, 7, 66, 5, 4, 7, 8, 6, 43, 23]
+
+        const bigNumbers = numbers.filter(eachNumber => {
+            return eachNumber > 10
+        })
+
+        console.log('los grandes', bigNumbers)
+
+
+
+
+
+        // Example 2
+        const numbers2 = [2, 3, 4, 7, 66, 5, 4, 7, 8, 6, 43, 23]
+
+        const evenNumbers = numbers2.filter(eachNumber => {
+            return eachNumber % 2 === 0
+        })
+
+        console.log('los pares', evenNumbers)
+
+
+
+
+        // Example 3
+        const people = [
+            { name: 'Candice', age: 25 },
+            { name: 'Tammy', age: 30 },
+            { name: 'Allen', age: 20 },
+            { name: 'Nettie', age: 21 },
+            { name: 'Stuart', age: 17 },
+            { name: 'Bill', age: 19 }
+        ]
+
+        const admittedPeople = people.filter(eachPerson => {
+            return eachPerson.age >= 18
+        })
+
+        console.log('hoy se taja', admittedPeople)
+
+
+
+
+
+
+
+
+
+        // Example 4
+        const places = [
+            {
+                title: "Awesome Suite 20' away from la Rambla",
+                price: 200,
+                type: 'Private Room',
+                pool: true,
+                garage: false
+            },
+            {
+                title: 'Private apartment',
+                price: 190,
+                type: 'Entire Place',
+                pool: true,
+                garage: true
+            },
+            {
+                title: 'Apartment with awesome views',
+                price: 400,
+                type: 'Entire Place',
+                pool: false,
+                garage: false
+            },
+            {
+                title: 'Apartment in la Rambla',
+                price: 150,
+                type: 'Private Room',
+                pool: false,
+                garage: true
+            },
+            {
+                title: 'Comfortable place in Barcelona´s center',
+                price: 390,
+                type: 'Entire place',
+                pool: true,
+                garage: true
+            },
+            {
+                title: 'Room near Sagrada Familia',
+                price: 170,
+                type: 'Private Room',
+                pool: false,
+                garage: false
+            },
+            {
+                title: 'Great house next to Camp Nou',
+                price: 140,
+                type: 'Entire place',
+                pool: true,
+                garage: true
+            },
+            {
+                title: 'New apartment with 2 beds',
+                price: 2000,
+                type: 'Entire place',
+                pool: false,
+                garage: true
+            },
+            {
+                title: 'Awesome Suite',
+                price: 230,
+                type: 'Private Room',
+                pool: false,
+                garage: false
+            },
+            {
+                title: "Apartment 10' from la Rambla",
+                price: 930,
+                type: 'Entire place',
+                pool: true,
+                garage: true
+            }
+        ]
+
+
+        const cheapPlaces = places.filter(eachPlace => {
+            return eachPlace.price < 500
+        })
+
+        console.log('los baratos', cheapPlaces)
+
+
+        const poolPlaces = places.filter(eachPlace => {
+            return eachPlace.pool
+        })
+
+        console.log('con pisci', poolPlaces)
+
+
+        const greatPlaces = places.filter(eachPlace => {
+            return eachPlace.garage && eachPlace.pool && eachPlace.price < 600
+        })
+
+        console.log('las gangas', greatPlaces)
+
+
+        const apartments = places.filter(eachPlace => {
+            return eachPlace.title.toLowerCase().includes('apartment')
+        })
+
+        console.log('apartamentos', apartments)
+
+
+    </script>
+</body>º
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+        function eatDessert() {
+            console.log('Eating the dessert!...')
+        }
+
+        function eatDinner(action) {
+            console.log('Eating the dinner yum')
+            action()
+        }
+
+        eatDinner(eatDessert)
+
+
+
+
+
+
+        console.log('------')
+
+
+
+
+
+        // Example 2
+        function putShirt() {
+            console.log('Putting on the shirt.')
+        }
+
+        function putSocks() {
+            console.log('Putting on the socks.')
+        }
+
+        function putPants() {
+            console.log('Putting on the pants.')
+        }
+
+        function putShoes() {
+            console.log('Putting on the shoes.')
+        }
+
+        function getReadyForWork(firstStep, secondStep, thirdStep, fourthStep) {
+            firstStep()
+            secondStep()
+            thirdStep()
+            fourthStep()
+            console.log("I'm ready to go to work!!!")
+        }
+
+        getReadyForWork(putSocks, putPants, putShoes, putShirt)
+
+
+
+
+
+
+        console.log('------')
+
+
+
+
+        // Callback example 3
+        function applyNormalVAT(subtotal) {
+            console.log('El precio final es de', subtotal * 1.21, '(IVA regular)')
+        }
+        function applyReducedVAT(subtotal) {
+            console.log('El precio final es de', subtotal * 1.1, '(IVA reducido)')
+        }
+        function applyExentVAT(subtotal) {
+            console.log('El precio final es de', subtotal * 1, '(IVA exento)')
+        }
+
+
+
+
+        function getFinalPrice(cost, VATfunction) {
+            const subtotal = cost * 1.2
+            VATfunction(subtotal)
+        }
+
+
+        getFinalPrice(100, applyNormalVAT)
+        getFinalPrice(500, applyReducedVAT)
+        getFinalPrice(50, applyExentVAT)
+
+
+
+
+
+    </script>
+</body>
+
+</html>
